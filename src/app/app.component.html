@@ -1,0 +1,18 @@
+
+ <button type="button" class="btn btn-info btn-lg"
+ (click)=" loadMovies()">Load Movie </button>
+
+ 
+     
+     <form action="" id="filter" class="input">
+        <label> Filter by Movie Names </label>
+        <input class="input" type="text" [(ngModel)]="term" name="movies" #movies=ngModel>
+      </form>
+          
+    <div *ngFor="let m of mNames | filter:term" class="searchable">
+        <div class="col-sm-3 mov">    
+          <div class="col-sm-3"><img src="{{m.Poster}}"> <span class="title">{{m.Title}}</span> <span class="titlee">{{m.Year}}</span></div>
+           </div>
+      </div>
+      
+      
